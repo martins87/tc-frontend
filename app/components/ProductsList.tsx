@@ -1,6 +1,8 @@
 import React from "react";
 
 import { useProducts } from "../hooks/useProducts";
+import Centered from "./ui/Centered";
+import ProductRow from "./ProductRow";
 
 const ProductsList = () => {
   const { products, loading, error } = useProducts();
@@ -10,14 +12,11 @@ const ProductsList = () => {
 
   return (
     <div>
-      <h2>Produtos</h2>
-      <ul>
+      <Centered className="gap-y-2" direction="col">
         {products.map((produto) => (
-          <li key={produto.id}>
-            <strong>{produto.nome}</strong> - R${produto.preco}
-          </li>
+          <ProductRow key={produto.id} product={produto} />
         ))}
-      </ul>
+      </Centered>
     </div>
   );
 };

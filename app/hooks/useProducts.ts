@@ -1,15 +1,7 @@
 import { useState, useEffect } from "react";
 
-import { init } from "../mocks/init";
-
-export interface Product {
-  id: number;
-  nome: string;
-  categoria: string;
-  preco: number;
-  descricao: string;
-  imagem: string;
-}
+import { init } from "@/app/mocks/init";
+import { Product } from "@/app/types/Product";
 
 export function useProducts() {
   const [products, setProducts] = useState<Product[]>([]);
