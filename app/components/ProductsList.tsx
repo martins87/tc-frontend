@@ -12,7 +12,7 @@ const ProductsList = () => {
 
   return (
     <div>
-      <Centered className="gap-y-2" direction="col">
+      <Centered className="gap-y-4" direction="col">
         {products.map((produto) => (
           <ProductRow key={produto.id} product={produto} />
         ))}

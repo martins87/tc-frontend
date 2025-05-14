@@ -11,7 +11,7 @@ type ProductRowProps = {
 
 const ProductRow: FC<ProductRowProps> = ({ product }) => {
   return (
-    <Centered className="h-auto border border-[#CED4DA] rounded-lg pl-6 py-4 gap-x-10">
+    <Centered className="h-auto  rounded-lg pl-6 py-4 gap-x-10 border border-white hover:cursor-pointer hover:border-[#F7931A] transition-all duration-500 shadow-sm hover:shadow-lg">
       <Image
         width={94}
         height={140}
