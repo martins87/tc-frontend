@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 
 import { init } from "@/app/mocks/init";
-import { Product } from "@/app/types/Product";
+import { useProductsStore } from "../store/products";
 
 export function useProducts() {
-  const [products, setProducts] = useState<Product[]>([]);
+  const { products, setProducts } = useProductsStore();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -12,6 +12,11 @@ export function useProducts() {
     const fetchProducts = async () => {
       if (process.env.NODE_ENV === "development") {
         await init();
+      }
+
+      if (products.length > 0) {
+        setLoading(false);
+        return;
       }
 
       try {
@@ -22,13 +27,14 @@ export function useProducts() {
       } catch (err) {
         // @ts-expect-error:next-line
         setError(err.message || "Unknown error");
+        console.error("Error fetching products:", err);
       } finally {
         setLoading(false);
       }
     };
 
     fetchProducts();
-  }, []);
+  }, [products.length, setProducts]);
 
   return { products, loading, error };
 }
