@@ -4,8 +4,8 @@ import { twMerge } from "tailwind-merge";
 type TypographyProps = {
   children: string | ReactNode;
   className?: string;
-  font?: "neue-montreal" | "proxima-nova";
-  weight?: "400" | "500" | "700";
+  font?: "inter" | "sora";
+  weight?: "400" | "500" | "600" | "700";
   maxChar?: number;
   onClick?: () => void;
 };
@@ -13,7 +13,7 @@ type TypographyProps = {
 const Typography: FC<TypographyProps> = ({
   children,
   className,
-  font = "neue-montreal",
+  font = "inter",
   weight = "400",
   maxChar,
   onClick,
@@ -22,9 +22,9 @@ const Typography: FC<TypographyProps> = ({
     <span
       className={twMerge(
         "text-black/90",
-        font === "neue-montreal"
-          ? "font-[family-name:var(--font-neue-montreal)]"
-          : "font-[family-name:var(--font-proxima-nova)]",
+        font === "inter"
+          ? "font-[family-name:var(--font-inter)]"
+          : "font-[family-name:var(--font-sora)]",
         weight === "400"
           ? "font-normal"
           : weight === "500"
