@@ -1,7 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+
 import { init } from "./mocks/init";
+import Container from "./components/ui/Container";
 
 export default function Home() {
   const [productName, setProductName] = useState("");
@@ -22,8 +24,8 @@ export default function Home() {
   }, []);
 
   return (
-    <main>
+    <Container>
       <p>{productName}</p>
-    </main>
+    </Container>
   );
 }
