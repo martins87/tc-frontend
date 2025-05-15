@@ -1,6 +1,6 @@
 "use client";
 
-import { ChangeEvent, useRef, useState } from "react";
+import { ChangeEvent, FC, useRef, useState } from "react";
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
 
@@ -8,16 +8,24 @@ import Centered from "@/app/components/ui/Centered";
 import magnifyingGlass from "@/app/assets/icons/magnifying-glass-light.svg";
 import close from "@/app/assets/icons/close-small.svg";
 
-const SearchBar = () => {
+type SearchBarProps = {
+  onSearchChange: (searchTerm: string) => void;
+};
+
+const SearchBar: FC<SearchBarProps> = ({ onSearchChange }) => {
   const inputref = useRef<HTMLInputElement>(null);
   const [searchTerm, setSearchTerm] = useState<string>("");
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const search: string = e.target?.value;
     setSearchTerm(search);
+    onSearchChange(search);
   };
 
-  const handleCleanSearch = () => setSearchTerm("");
+  const handleCleanSearch = () => {
+    setSearchTerm("");
+    onSearchChange("");
+  };
 
   const handleEnterKey = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
@@ -36,7 +44,6 @@ const SearchBar = () => {
         className="hover:cursor-pointer"
         src={magnifyingGlass}
         alt="magnifying glass icon"
-        // onClick={handleStartSearch}
       />
       <input
         className={twMerge(
@@ -48,7 +55,7 @@ const SearchBar = () => {
         value={searchTerm}
         onChange={handleInputChange}
         onKeyDown={handleEnterKey}
-        placeholder="Buscar"
+        placeholder="Buscar pelo nome do produto"
       />
       <Image
         className="hover:cursor-pointer hover:scale-110 transition-all duration-200 ease-in-out"
