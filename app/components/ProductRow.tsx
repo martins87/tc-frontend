@@ -11,14 +11,16 @@ type ProductRowProps = {
 
 const ProductRow: FC<ProductRowProps> = ({ product }) => {
   return (
-    <Centered className="h-auto  rounded-lg pl-6 py-4 gap-x-10 border border-white hover:cursor-pointer hover:border-[#F7931A] transition-all duration-500 shadow-sm hover:shadow-lg">
-      <Image
-        width={94}
-        height={140}
-        className="rounded-sm"
-        src={product.imagemURL}
-        alt=""
-      />
+    <Centered className="flex-col sm:flex-row gap-y-10 h-auto rounded-lg pl-6 py-4 gap-x-10 border border-white hover:cursor-pointer hover:border-[#F7931A] transition-all duration-500 shadow-sm hover:shadow-lg">
+      <Centered className="w-fit">
+        <Image
+          width={94}
+          height={140}
+          className="rounded-sm"
+          src={product.imagemURL}
+          alt=""
+        />
+      </Centered>
       <Centered direction="col" items="start" justify="between">
         <Typography className="text-xl text-[#212529]" weight="500" font="sora">
           {product.nome}
@@ -37,15 +39,6 @@ const ProductRow: FC<ProductRowProps> = ({ product }) => {
           {product.descricao}
         </Typography>
       </Centered>
-      {/* <Centered className="gap-y-2" direction="col">
-        <Centered className="flex-1 ml-auto gap-x-2" justify="end">
-          <IconButton tertiary icon={arrowDown} />
-          <IconButton tertiary icon={arrowUp} />
-          <IconButton tertiary icon={edit} onClick={handleEdit} />
-          <IconButton tertiary icon={trash} onClick={handleDelete} />
-        </Centered>
-        <Button className="w-[184px] ml-auto" label="Ocultar" secondary />
-      </Centered> */}
     </Centered>
   );
 };
