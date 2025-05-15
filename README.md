@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Aplicação web para gerenciamento de produtos
 
-## Getting Started
+Aplicação web desenvolvida para visualização, listagem e adição de produtos. Para teste foram usados produtos Apple, como iPhone, Apple Watch, Airpods, etc. listados em https://www.apple.com/br/store
 
-First, run the development server:
+## Funcionalidades
+
+- Listagem de produtos com imagem, nome, preço, categoria e descrição.
+- Página para adição de produto.
+- Pesquisa de produtos por nome.
+- Filtro para ordenação de produtos por preço, ascendente ou descendente.
+- Layout responsivo para diferentes tamanhos de tela.
+
+## Tecnologias utilizadas
+
+- [Next.js](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Mock Service Worker](https://mswjs.io/), para consumo de API fictícia.
+- [Zustand](https://zustand-demo.pmnd.rs/), para gerenciamento de estado global.
+
+## API fictícia
+
+Para simular o consumo de uma API, foi utilizada a biblioteca MSW (Mock Service Worker). O endpoint `/api/produtos` foi criado, retornando uma lista de produtos que são exibidos inicialmente. A escolha dessa biblioteca deu-se pelo fato da flexibilidade de definir inicialmente produtos de nossa escolha, além da facilidade de manuseio.
+
+## Rodando localmente
+
+Para executar o projeto em ambiente local:
 
 ```bash
+git clone https://github.com/martins87/tc-frontend.git
+cd tc-frontend
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
