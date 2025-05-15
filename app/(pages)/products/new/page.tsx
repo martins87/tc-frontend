@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 import Centered from "@/app/components/ui/Centered";
 import Container from "@/app/components/ui/Container";
@@ -8,13 +9,17 @@ import Input from "@/app/components/ui/Input";
 import InputWrapper from "@/app/components/ui/InputWrapper";
 import Typography from "@/app/components/ui/Typography";
 import Textarea from "@/app/components/ui/Textarea";
+import Button from "@/app/components/ui/Button";
 
 const NewProductPage = () => {
+  const router = useRouter();
   const [category, setCategory] = useState("");
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
   const [imageURL, setImageURL] = useState("");
+
+  const handleCancel = () => router.push("/");
 
   return (
     <Container>
@@ -57,6 +62,20 @@ const NewProductPage = () => {
             setValue={setImageURL}
           />
         </InputWrapper>
+        <Centered className="gap-x-2" justify="start">
+          <Button
+            label="Cancel"
+            secondary
+            onClick={handleCancel}
+            textClassname="uppercase font-semibold"
+          />
+          <Button
+            label="Add Product"
+            primary
+            onClick={() => {}}
+            textClassname="uppercase font-semibold"
+          />
+        </Centered>
       </Centered>
     </Container>
   );
