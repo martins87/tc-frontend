@@ -36,7 +36,7 @@ const Button: FC<ButtonProps> = ({
   return (
     <button
       className={twMerge(
-        "h-12 group flex items-center justify-center gap-x-3 px-5 rounded-md transition-colors ease-in-out duration-200 hover:cursor-pointer",
+        "h-12 group flex items-center justify-center gap-x-3 px-5 rounded-lg transition-colors ease-in-out duration-200 hover:cursor-pointer",
         primary
           ? "bg-black hover:bg-black/90 border-0"
           : secondary
