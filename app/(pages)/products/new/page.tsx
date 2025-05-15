@@ -74,13 +74,13 @@ const NewProductPage = () => {
         </InputWrapper>
         <Centered className="gap-x-2" justify="start">
           <Button
-            label="Cancel"
+            label="Cancelar"
             secondary
             onClick={handleCancel}
             textClassname="uppercase font-semibold"
           />
           <Button
-            label="Add Product"
+            label="Adicionar Produto"
             primary
             onClick={handleAddProduct}
             textClassname="uppercase font-semibold"
