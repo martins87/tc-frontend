@@ -52,7 +52,7 @@ const ComboBox: FC<ComboBoxProps> = ({
   return (
     <Centered
       className={twMerge(
-        "relative px-2 py-2 gap-x-0 gap-y-1 rounded-lg bg-white border-[1px] border-[#CED4DA]",
+        "relative px-2 py-2 gap-x-0 gap-y-1 rounded-lg bg-white border-[1px] border-[#CED4DA] z-20",
         className
       )}
       direction="col"
