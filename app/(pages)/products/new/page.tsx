@@ -40,7 +40,7 @@ const NewProductPage = () => {
   const handleCancel = () => router.push("/");
 
   return (
-    <Container>
+    <Container className="my-10">
       <Typography className="w-full mr-auto text-3xl my-4" weight="600">
         Novo Produto
       </Typography>
