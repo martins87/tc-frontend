@@ -41,41 +41,33 @@ const NewProductPage = () => {
 
   return (
     <Container className="my-10">
-      <Typography className="w-full mr-auto text-3xl my-4" weight="600">
+      <Typography className="w-full mr-auto text-4xl my-4" weight="600">
         Novo Produto
       </Typography>
       <Centered className="gap-y-4" direction="col">
         <InputWrapper label="Categoria">
           <Input
-            placeholder="Enter product category"
+            placeholder="Ex: iPhone"
             value={category}
             setValue={setCategory}
           />
         </InputWrapper>
         <InputWrapper label="Nome">
-          <Input
-            placeholder="Enter product name"
-            value={name}
-            setValue={setName}
-          />
+          <Input placeholder="Ex: iPhone 16" value={name} setValue={setName} />
         </InputWrapper>
         <InputWrapper label="Preço">
-          <Input
-            placeholder="Enter product price"
-            value={price}
-            setValue={setPrice}
-          />
+          <Input placeholder="Ex: 7.799" value={price} setValue={setPrice} />
         </InputWrapper>
         <InputWrapper label="Descrição">
           <Textarea
-            placeholder="Enter product description"
+            placeholder="Ex: iPhone 16 com 256GB de armazenamento..."
             value={description}
             setValue={setDescription}
           />
         </InputWrapper>
         <InputWrapper label="URL da imagem">
           <Input
-            placeholder="Enter product image URL"
+            placeholder="Ex: https://m.media-amazon.com/images/I/61ctYsUobKL._AC_SX679_.jpg"
             value={imageURL}
             setValue={setImageURL}
           />

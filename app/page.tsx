@@ -10,7 +10,7 @@ import AddProductButton from "./components/AddProductButton";
 export default function Home() {
   return (
     <Container className="my-10">
-      <Typography className="w-full mr-auto text-3xl my-4 " weight="600">
+      <Typography className="w-full mr-auto text-4xl my-4" weight="600">
         Produtos
       </Typography>
       <Centered className="mb-10">
