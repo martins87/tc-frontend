@@ -7,17 +7,29 @@ import Typography from "./ui/Typography";
 
 type ProductsListProps = {
   searchTerm: string;
+  sortOrder: string;
 };
 
-const ProductsList: FC<ProductsListProps> = ({ searchTerm }) => {
+const ProductsList: FC<ProductsListProps> = ({ searchTerm, sortOrder }) => {
   const { products, loading, error } = useProducts();
 
   if (loading) return <div>Carregando...</div>;
   if (error) return <div>Erro: {error}</div>;
 
-  const filteredProducts = products.filter((product) =>
-    product.nome.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const processedProducts = [...products];
+
+  const filteredProducts = processedProducts
+    .filter((product) =>
+      product.nome.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+    .sort((a, b) => {
+      if (sortOrder === "ascending") {
+        return a.preco - b.preco;
+      } else {
+        // Default to descending if not explicitly ascending
+        return b.preco - a.preco;
+      }
+    });
 
   return (
     <div>

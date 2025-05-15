@@ -36,7 +36,7 @@ const SearchBar: FC<SearchBarProps> = ({ onSearchChange }) => {
   return (
     <Centered
       className={twMerge(
-        "w-full sm:w-1/2 lg:w-1/3 gap-x-4 rounded-full px-4 h-14",
+        "w-full md:w-1/2 lg:w-1/3 gap-x-4 rounded-full px-4 h-14",
         true ? "bg-[#222222] z-20" : "bg-inherit"
       )}
     >

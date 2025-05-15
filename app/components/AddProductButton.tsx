@@ -13,7 +13,8 @@ const AddProductButton = () => {
       weight="500"
       onClick={handleClick}
     >
-      + Adicionar produto
+      <span className="flex sm:hidden lg:flex">+ Adicionar produto</span>
+      <span className="hidden sm:flex lg:hidden">+ Adicionar</span>
     </Typography>
   );
 };
